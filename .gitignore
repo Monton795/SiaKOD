@@ -4,4 +4,4 @@ __pycache__/
 venv/
 .venv/
 out/
-результаты.csv
+results.csv
