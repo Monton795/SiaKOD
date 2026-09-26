@@ -6,11 +6,7 @@ import csv
 from typing import List
 
 ELEMENT_SIZE = 8
-
-
-# ---------- Задание 1: реализация трёх способов ----------
-# Требование к данным для dup_cycle: все элементы в [1, n], где n = len(a) - 1,
-# ровно одно значение повторяется. Иначе — бесконечный цикл.
+# реализация трёх способов
 def dup_set(a: List[int]) -> int:
     s = set()
     for x in a:
@@ -42,7 +38,7 @@ def dup_cycle(a: List[int]) -> int:
     return s
 
 
-# ---------- Задание 2: бенчмаркинг времени ----------
+# бенчмаркинг времени
 def gen(n: int, seed: int = 42) -> List[int]:
     r = random.Random(seed)
     a = list(range(1, n + 1))
@@ -65,7 +61,7 @@ def bench(sizes, reps=7):
     return res
 
 
-# ---------- Задание 3: замер памяти ----------
+#  замер памяти
 def mem(n):
     a = gen(n)
     out = {}
@@ -78,7 +74,7 @@ def mem(n):
     return out
 
 
-# ---------- Тесты ----------
+# Тесты
 def test_all_agree():
     for n in (1, 2, 3, 5, 10, 100, 1000):
         a = gen(n, seed=n)
